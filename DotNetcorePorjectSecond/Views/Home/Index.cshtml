@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<DotNetcorePorjectSecond.Models.PersonModels>
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    @foreach (var item in Model)
+     {
+<tr>
+    <td>@item.Id</td>
+    <td>@item.Name</td>
+    <td>@item.Email</td>
+    <td>@item.City</td>
+    <td><a href="@Url.Action("Edit","Home",new { item.Id })" class="btn btn-outline-warning">Edit</a></td>
+    <td><a href="@Url.Action("Delete","Home",new { item.Id })" class="btn btn-outline-danger">DELETE</a></td>
+
+
+
+
+
+</tr>
+
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+</table>
